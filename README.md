@@ -1,5 +1,7 @@
 # qoder-proxy — 把 Qoder 积分变成 OpenAI 兼容 API
 
+> 📘 English documentation: [README.en.md](./README.en.md)
+
 用 Qoder CN 的账号积分跑任意 OpenAI 兼容客户端（DSH、Cline、Continue、各种 SDK）。
 
 **已验证可用**：15 个模型、流式/非流式、思考链（`reasoning_content`）、逐次积分计量。
