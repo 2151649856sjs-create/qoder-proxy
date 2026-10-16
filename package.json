@@ -1,0 +1,46 @@
+{
+  "name": "qoder-proxy",
+  "version": "1.0.0",
+  "description": "OpenAI-compatible local proxy that exposes your Qoder CN credits as a standard /v1/chat/completions API, plus a DSH model-provider plugin.",
+  "type": "module",
+  "main": "server.mjs",
+  "license": "MIT",
+  "keywords": [
+    "qoder",
+    "openai-compatible",
+    "proxy",
+    "llm",
+    "dsh",
+    "deepseek-harness",
+    "reverse-proxy",
+    "credits"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "server.mjs",
+    "README.md",
+    "LICENSE",
+    "dsh-plugin"
+  ],
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs",
+    "dev:auth": "node dev/t1-auth.mjs",
+    "dev:chat": "node dev/t3-chat.mjs",
+    "dev:stream": "node dev/t4-stream.mjs",
+    "dev:usage": "node dev/t5-usage.mjs"
+  },
+  "dependencies": {
+    "@qodercn-ai/qodercn-agent-sdk": "^1.0.53"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OWNER/qoder-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OWNER/qoder-proxy/issues"
+  },
+  "homepage": "https://github.com/OWNER/qoder-proxy#readme"
+}

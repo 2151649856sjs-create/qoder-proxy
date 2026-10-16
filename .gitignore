@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Local environment / credentials
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+*.err
+p.out
+p.err
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/

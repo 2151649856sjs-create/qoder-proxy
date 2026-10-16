@@ -1,0 +1,5 @@
+# Register the Qoder provider without changing the profile's default model.
+# Requires qoder-proxy to be running (see ../server.mjs).
+- insert:
+    - id: llm-qoder
+      name: dsh-llm-qoder
