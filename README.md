@@ -38,14 +38,18 @@ npm install
 ### 1. 登录（只需一次）
 
 ```bash
-npx qodercn login
+npm run setup        # 等价于下面的手动命令；打开浏览器确认即完成
 ```
 
-> 如果上面的命令不可用，也可以直接调 SDK 里的 CLI 入口：
-> `node node_modules/@qodercn-ai/qodercn-agent-sdk/dist/_worker/qoder-worker-runtime.obf.mjs login`
+`setup` 会调用 Qoder 官方 SDK 自带的设备码登录，用**你自己的账号**完成认证，
+凭据进入系统凭据管理器（Windows 上是 `qoder-cli-cn-oauth`），**不会**写进任何明文文件。
 
-会打印一个 `https://qoder.cn/device/selectAccounts?...` 链接，浏览器里确认即可。
-凭据由系统凭据管理器保存（Windows 上是 `qoder-cli-cn-oauth`），**不会**写进任何明文文件。
+> 手动方式（当 setup 不可用）：
+> ```bash
+> npx qodercn login
+> # 或 node node_modules/@qodercn-ai/qodercn-agent-sdk/dist/_worker/qoder-worker-runtime.obf.mjs login
+> ```
+> 浏览器里确认 `https://qoder.cn/device/selectAccounts?...` 链接即可。
 
 验证：
 
@@ -137,6 +141,16 @@ MiniMax-M2.7
 ## 接到 DSH
 
 仓库里的 `dsh-plugin/` 是一个 DSH 模型 provider 插件，把上面的端点注册成 DSH provider：
+
+一条命令即可完成挂载（自动建 junction + 追加 patch 条目，幂等）：
+
+```bash
+npm run install:dsh          # 等价于 node install-dsh-plugin.mjs
+# 可选：指定 profile / DSH_HOME
+DSH_PROFILE=web DSH_HOME=/path/to/.dsh node install-dsh-plugin.mjs
+```
+
+手动方式：
 
 1. 把 `dsh-plugin/` 挂进你的 DSH profile（例如用 junction / symlink 放到
    `<DSH_HOME>/profiles/web/node_modules/dsh-llm-qoder`，或直接 `dsh plugin add` 该目录）；

@@ -27,6 +27,8 @@
   "scripts": {
     "start": "node server.mjs",
     "check": "node --check server.mjs",
+    "setup": "node setup.mjs",
+    "install:dsh": "node install-dsh-plugin.mjs",
     "dev:auth": "node dev/t1-auth.mjs",
     "dev:chat": "node dev/t3-chat.mjs",
     "dev:stream": "node dev/t4-stream.mjs",
